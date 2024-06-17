@@ -11,7 +11,7 @@ import SecondaryButton from '@/components/buttons/SecondaryButton'
 export default function FirstScreen() {
 	useEffect(() => { 
 		const handleLoad = () => {
-			const tl = gsap.timeline()
+			const tl = gsap.timeline({delay: 0.4})
 			tl.add('start')
 				.to('.text-from-bottom span', { duration: 1.4, y: 0, stagger: 0.05, scale: 1, ease: 'power4.out' }, 'start')
 				.to('.background-scale', { duration: 1.8, scale: 1, opacity: 1, ease: 'power3.out' }, 'start')
