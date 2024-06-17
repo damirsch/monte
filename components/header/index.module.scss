@@ -1,0 +1,9 @@
+.header{
+	display: flex;
+	height: 46px;
+	justify-content: space-between;
+	.buttons{
+		display: flex;
+		gap: 8px;
+	}
+}

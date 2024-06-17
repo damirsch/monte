@@ -1,0 +1,55 @@
+.primaryButton{
+	width: 46px;
+	height: 46px;
+	padding: 13px;
+	@media screen and (max-width: 1120px){
+		width: 34px;
+		height: 34px;
+		padding: 9px;
+	}
+	&[data-variant='gray']{
+		background-color: #F6F6F6;
+	}
+	&[data-variant='transparent']{
+		background-color: transparent;
+		border: 1px solid #fff;
+	}
+	&[data-variant='light']{
+		background-color: #fff;
+	}
+	&[data-rounded='unset']{
+		border-radius: 8px;
+	}
+}
+
+.secondaryButton{
+	padding: 4px;
+	display: flex;
+	align-items: center;
+	border-radius: 999px;
+	width: fit-content;
+	color: #fff;
+	transform: scale(0);
+	.imageWrapper{
+		min-width: 37px;
+		min-height: 37px;
+		width: 37px;
+		height: 37px;
+		border-radius: 100%;
+		padding: 9px;
+		background-color: #D5E7EE;
+	}
+	p{
+		margin: 0 10px;	
+		display: none;
+		opacity: 0;
+		font-size: 18px;
+		white-space: nowrap;
+		// @media screen and (max-width: 1120px){
+		// 	font-size: 16px;
+		// }
+	}
+	&[data-variant='dark']{
+		background-color: #141414;
+	}
+}

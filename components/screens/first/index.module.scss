@@ -1,0 +1,161 @@
+.firstScreen{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	@media screen and (max-width: 1120px){
+		flex-direction: column;
+	}
+	.leftBlock, .rightBlock{
+		width: 100%;
+		height: 100%;
+	}
+	.leftBlock{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 40px 40px 17px;
+		@media screen and (max-width: 1120px){
+			padding: 30px 20px 50px;	
+		}
+		.mainWrapper{
+			text-align: center;
+			@media screen and (max-width: 1120px){
+				margin-top: 70px;
+			}
+			.preTitle{
+				font-size: 18px;
+				@media screen and (max-width: 1120px){
+					font-size: 14px;
+				}
+			}
+			.title{
+				margin-top: 12px;
+				font-size: 56px;
+				font-weight: 400;
+				@media screen and (max-width: 1120px){
+					font-size: 36px;
+				}
+			}
+		}
+		.buttons{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@media screen and (max-width: 1120px){
+				justify-content: center;
+				margin-top: 25px;
+			}
+			.button{
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				@media screen and (max-width: 1120px){
+					display: none;
+				}
+				p{
+					width: fit-content;
+					font-size: 14px;
+				}
+			}
+			.imageWrapper{
+				position: relative;
+				display: flex;
+				.icon{
+					max-width: 70px;
+					max-height: 70px;
+					min-width: 70px;
+					min-height: 70px;
+					border-radius: 100%;
+					background-image: url('../../../public/office.jpg');
+					background-size: cover;
+					background-position: center;
+				}
+				.bage{
+					position: absolute;
+					top: 0;
+					right: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: #D5E7EE;
+					width: 23px;
+					height: 23px;
+					border-radius: 100%;
+					padding: 7px;
+					img{
+
+					}
+				}
+			}
+		}
+	}
+	.rightBlock{
+		padding: 10px;
+		min-height: 429px;
+		@media screen and (max-width: 1120px){
+			padding: 0 15px 15px;
+		}
+		.wrapper{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			padding: 30px;
+			border-radius: 30px;
+			overflow: hidden;
+			.background{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -2;
+				width: 100%;
+				height: 100%;
+				background-image: url(../../../public/firstscreenimg.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			.header{
+				display: flex;
+				justify-content: space-between;
+				@media screen and (max-width: 1120px){
+					justify-content: end;
+				}
+				p{
+					max-width: 179px;
+					color: #fff;
+					font-size: 18px;
+					font-weight: 500;
+					@media screen and (max-width: 1120px){
+						display: none;
+					}
+				}
+				.buttons{
+					display: flex;
+					gap: 8px;
+				}
+			}
+			.downloadBtn{
+				display: flex;
+				align-items: center;
+				margin: auto 0 0 auto;
+				padding: 16px 20px;
+				border-radius: 20px;
+				background-color: #fff;
+				gap: 10px;
+				p{
+					font-size: 18px;
+					width: fit-content;
+				}
+				.imageWrapper{
+					width: 40px;
+					height: 40px;
+					padding: 10px;
+					border-radius: 100%;
+					background-color: #F6F6F6;
+				}
+			}
+		}
+	}
+}
