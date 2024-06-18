@@ -36,6 +36,7 @@ export default function FirstScreen() {
 			<div className={styles.leftBlock}>
 				<Header/>
 				<div className={styles.mainWrapper}>
+						<p>{loaded && 'cool'}</p>
 					<p className={styles.preTitle + ' ' + 'text-from-top'}>Building Your Dreams</p>
 					<div className={styles.title}>
 						<p className='text-from-bottom'><span>Real Estate in Dubai:</span></p>
