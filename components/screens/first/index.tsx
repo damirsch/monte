@@ -9,11 +9,8 @@ import { gsap } from 'gsap'
 import SecondaryButton from '@/components/buttons/SecondaryButton'
 
 export default function FirstScreen() {
-	const [loaded, setLoaded] = useState(false)
-
 	useEffect(() => { 
 		const handleLoad = () => {
-			setLoaded(true)
 			const tl = gsap.timeline({delay: 0.7})
 			tl.add('start')
 				.to('.text-from-bottom span', { duration: 1.4, y: 0, stagger: 0.05, scale: 1, ease: 'power4.out' }, 'start')
@@ -29,19 +26,18 @@ export default function FirstScreen() {
 				.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
 		}
 		handleLoad()
-	}, [loaded]);
+	});
 
 	return (
 		<div className={styles.firstScreen}>
 			<div className={styles.leftBlock}>
 				<Header/>
 				<div className={styles.mainWrapper}>
-						<p>{loaded && 'cool'}</p>
 					<p className={styles.preTitle + ' ' + 'text-from-top'}>Building Your Dreams</p>
 					<div className={styles.title}>
 						<p className='text-from-bottom'><span>Real Estate in Dubai:</span></p>
 						<p className='text-from-bottom'><span>Ideal for Living and</span></p>
-						<p className='text-from-bottom'><span>Investings</span></p>
+						<p className='text-from-bottom'><span>Investing</span></p>
 					</div>
 				</div>
 				<div className={styles.buttons}>
