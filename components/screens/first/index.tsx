@@ -8,26 +8,29 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import SecondaryButton from '@/components/buttons/SecondaryButton'
 
-const handleLoad = () => {
-	const tl = gsap.timeline({delay: 0.4})
-	tl.add('start')
-		.to('.text-from-bottom span', { duration: 1.4, y: 0, stagger: 0.05, scale: 1, ease: 'power4.out' }, 'start')
-		.to('.background-scale', { duration: 1.8, scale: 1, opacity: 1, ease: 'power3.out' }, 'start')
-		.to('.button-right-move', { duration: 1, scale: 1, ease: 'power3.out' }, 'start')
-		.to('.button-right-move', { duration: 1.3, width: 196, ease: 'power2' }, 'start+=0.6')
-		.to('.button-right-move p', { duration: 1, opacity: 1, display: 'block', ease: 'power3.out' }, 'start+=1.3')
-		.to('.button-scale', { duration: 1.6, scale: 1, ease: 'power3.out' }, 'start')
-		.to('.img-scale', { duration: 1, scale: 1, stagger: 0.1, ease: 'power3.out' }, 'start')
-		.to('.text-from-top', { duration: 0.8, opacity: 1, y: 0, ease: 'power2.out' }, 'start+=0.2')
-		.to('.text-from-left', { duration: 0.8, opacity: 1, x: 0, ease: 'power2.out' }, 'start+=0.2')
-		.to('.image-from-bottom span', { duration: 1.6, y: 0, ease: 'power4.out' }, 'start+=0.4')
-		.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
-}
-if(typeof window !== 'undefined'){
-	window.addEventListener('load', handleLoad);
-}
-
 export default function FirstScreen() {
+	useEffect(() => { 
+		const handleLoad = () => {
+			const tl = gsap.timeline({delay: 0.7})
+			tl.add('start')
+				.to('.text-from-bottom span', { duration: 1.4, y: 0, stagger: 0.05, scale: 1, ease: 'power4.out' }, 'start')
+				.to('.background-scale', { duration: 1.8, scale: 1, opacity: 1, ease: 'power3.out' }, 'start')
+				.to('.button-right-move', { duration: 1, scale: 1, ease: 'power3.out' }, 'start')
+				.to('.button-right-move', { duration: 1.3, width: 196, ease: 'power2' }, 'start+=0.6')
+				.to('.button-right-move p', { duration: 1, opacity: 1, display: 'block', ease: 'power3.out' }, 'start+=1.3')
+				.to('.button-scale', { duration: 1.6, scale: 1, ease: 'power3.out' }, 'start')
+				.to('.img-scale', { duration: 1, scale: 1, stagger: 0.1, ease: 'power3.out' }, 'start')
+				.to('.text-from-top', { duration: 0.8, opacity: 1, y: 0, ease: 'power2.out' }, 'start+=0.2')
+				.to('.text-from-left', { duration: 0.8, opacity: 1, x: 0, ease: 'power2.out' }, 'start+=0.2')
+				.to('.image-from-bottom span', { duration: 1.6, y: 0, ease: 'power4.out' }, 'start+=0.4')
+				.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
+		}
+		window.addEventListener('load', handleLoad);
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+	}, []);
+
 	return (
 		<div className={styles.firstScreen}>
 			<div className={styles.leftBlock}>
