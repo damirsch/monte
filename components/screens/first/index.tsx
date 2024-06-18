@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import Header from '@/components/header'
 import PrimaryButton from '@/components/buttons/PrimaryButton'
@@ -9,8 +9,11 @@ import { gsap } from 'gsap'
 import SecondaryButton from '@/components/buttons/SecondaryButton'
 
 export default function FirstScreen() {
+	const [loaded, setLoaded] = useState(false)
+
 	useEffect(() => { 
 		const handleLoad = () => {
+			setLoaded(true)
 			const tl = gsap.timeline({delay: 0.7})
 			tl.add('start')
 				.to('.text-from-bottom span', { duration: 1.4, y: 0, stagger: 0.05, scale: 1, ease: 'power4.out' }, 'start')
@@ -25,7 +28,8 @@ export default function FirstScreen() {
 				.to('.image-from-bottom span', { duration: 1.6, y: 0, ease: 'power4.out' }, 'start+=0.4')
 				.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
 		}
-		window.onload = handleLoad
+		handleLoad()
+		// window.onload = handleLoad
 	}, []);
 
 	return (
