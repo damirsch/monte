@@ -41,7 +41,7 @@ export default function FirstScreen() {
 					<div className={styles.title}>
 						<p className='text-from-bottom'><span>Real Estate in Dubai:</span></p>
 						<p className='text-from-bottom'><span>Ideal for Living and</span></p>
-						<p className='text-from-bottom'><span>Investing</span></p>
+						<p className='text-from-bottom'><span>Investings</span></p>
 					</div>
 				</div>
 				<div className={styles.buttons}>
