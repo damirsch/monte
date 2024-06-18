@@ -29,7 +29,7 @@ export default function FirstScreen() {
 				.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
 		}
 		handleLoad()
-		// window.onload = handleLoad
+		// window.onload = handleLoad;
 	}, []);
 
 	return (
