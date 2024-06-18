@@ -25,10 +25,7 @@ export default function FirstScreen() {
 				.to('.image-from-bottom span', { duration: 1.6, y: 0, ease: 'power4.out' }, 'start+=0.4')
 				.to('.text-from-bottom-with-opacity span', { duration: 1.4, y: 0, opacity: 1, stagger: 0.1 , ease: 'power4.out' }, 'start+=0.5')
 		}
-		window.addEventListener('load', handleLoad);
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
+		window.onload = handleLoad
 	}, []);
 
 	return (
